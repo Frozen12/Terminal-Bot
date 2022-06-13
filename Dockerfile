@@ -2,7 +2,8 @@ FROM python:3.9.13-bullseye
 WORKDIR /app
 RUN apt update && apt install -y --no-install-recommends \
      p7zip-full rdfind wget curl \
-     git 
+     git musl
+# muls is a dependency for gdrive
 
 COPY . .
 
