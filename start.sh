@@ -8,7 +8,9 @@ wget "https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_
 mkdir -p .local/bin
 tar -zxf gdrive_2.1.1_linux_amd64.tar.gz -C .local/bin
 
-export PATH=.local/bin:$PATH
+# set $HOME/.local/bin as non-root path
+export PATH=$HOME/.local/bin:$PATH
+
 echo "gdrive installed successfully"
 # remove junk
 rm -rf gdrive_2.1.1_linux_amd64.tar.gz *.txt *yml *.md
