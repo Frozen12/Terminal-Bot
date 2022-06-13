@@ -3,31 +3,23 @@
 # update code upstream
 python3 upstream.py
 
-# Install rclone static binary
-wget -q https://downloads.rclone.org/v1.58.1/rclone-v1.58.1-linux-amd64.zip
-unzip -q rclone-*-linux-amd64.zip
-mkdir -p ~/.local/bin
-mv rclone-*-linux-amd64/rclone ~/.local/bin/rclone
-export PATH=$PWD/.local/bin:$PATH
-echo "Rclone installed successfully"
+# Install gdrive
+wget "https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz"
+mkdir -p .local/bin
+tar -zxf gdrive_2.1.1_linux_amd64.tar.gz -C .local/bin
+
+export PATH=.local/bin:$PATH
+echo "gdrive installed successfully"
 # remove junk
-rm -rf rclone-*-linux-amd64 rclone-*-linux-amd64.zip *.txt *yml *.md
+rm -rf gdrive_2.1.1_linux_amd64.tar.gz *.txt *yml *.md
 
-# Create rclone.conf file from base64
-if [[ -n $RCLONE_CONFIG_BASE64 ]]; then
-	echo "Rclone config detected"
-	echo "[DRIVE]" > rclone.conf
-    mkdir -p $HOME/.config/rclone
-	echo "$(echo $RCLONE_CONFIG_BASE64|base64 -d)" >> $HOME/.config/rclone/rclone.conf
-        echo "Rclone config placed in position"
-fi
 
-# fetch rclone.conf from url
+# fetch token_v2.json from url
 
-if [[ -n $RCLONE_CONFIG_URL ]]; then
-	echo "Fetching rclone.conf from url"
-	mkdir -p $HOME/.config/rclone
-    curl -o$HOME/.config/rclone/rclone.conf "$RCLONE_CONFIG_URL"
+if [[ -n $JSON_FILR_URL ]]; then
+	echo "Fetching token_v2.json from url"
+	mkdir -p .gdrive
+    curl -o.gdrive/token_v2.json "$JSON_FILR_URL"
 
 fi
 
