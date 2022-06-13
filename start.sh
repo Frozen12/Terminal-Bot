@@ -16,10 +16,10 @@ rm -rf gdrive_2.1.1_linux_amd64.tar.gz *.txt *yml *.md
 
 # fetch token_v2.json from url
 
-if [[ -n $JSON_FILR_URL ]]; then
+if [[ -n $JSON_FILE_URL ]]; then
 	echo "Fetching token_v2.json from url"
 	mkdir -p .gdrive
-    curl -o.gdrive/token_v2.json "$JSON_FILR_URL"
+    curl -o.gdrive/token_v2.json "$JSON_FILE_URL"
 
 fi
 
