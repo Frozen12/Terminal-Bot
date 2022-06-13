@@ -16,4 +16,4 @@ jobs:
           usedocker: true
           docker_heroku_process_type: worker
           stack: "container"
-          region: "europe"
+          region: "us"
