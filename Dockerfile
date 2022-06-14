@@ -10,6 +10,7 @@ RUN apt update && apt install -y \
 # p7zip-rar is a non-free package of Debian 11
 # To Enable Non-Free Packages we need "aptitude update" command
 RUN aptitude update
+RUN apt update
 
 RUN apt install -y p7zip-full p7zip-rar
 
