@@ -11,7 +11,7 @@ RUN apt update && apt install -y \
 # To Enable Non-Free Packages we need "aptitude update" command
 RUN aptitude update
 
-RUN aptitude install -y p7zip-full p7zip-rar
+RUN apt install -y p7zip-full p7zip-rar
 
 COPY . .
 
