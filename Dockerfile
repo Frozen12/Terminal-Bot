@@ -3,17 +3,17 @@ WORKDIR /app
 
 RUN apt update && apt install -y \
      rdfind wget curl git \
-     aptitude musl 
+     musl 
 
 # muls is a dependency for gdrive which is dependency of gshell
 
 # p7zip-rar is a non-free package of Debian 11
 # To Enable Non-Free Packages we need "aptitude update" command
-RUN aptitude update
-# RUN add-apt-repository universe
+RUN apt update
+RUN apt install software-properties-common
+RUN add-apt-repository non-free
 RUN apt-get update
-RUN apt-get -y install p7zip-rar
-# RUN apt install -y p7zip-full p7zip-rar
+RUN apt install -y p7zip-full p7zip-rar
 
 
 COPY . .
