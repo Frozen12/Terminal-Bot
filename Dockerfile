@@ -1,14 +1,17 @@
 FROM python:3.9.13-bullseye
 WORKDIR /app
-RUN aptitude update
+
 RUN apt update && apt install -y \
      rdfind wget curl git \
-     p7zip-full p7zip-rar \
-     musl 
-RUN apt clean && apt update
-RUN apt install -y p7zip-rar
+     aptitude musl 
 
 # muls is a dependency for gdrive which is dependency of gshell
+
+# p7zip-rar is a non-free package of Debian 11
+# To Enable Non-Free Packages we need "aptitude update" command
+RUN aptitude update
+
+RUN apt install -y p7zip-full p7zip-rar
 
 COPY . .
 
