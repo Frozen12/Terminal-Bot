@@ -8,12 +8,12 @@ try:
     if len(UPSTREAM_REPO) == 0:
        raise TypeError
 except:
-    UPSTREAM_REPO = "https://github.com/Frozen12/Terminal-Bot"
+    UPSTREAM_REPO = "https://github.com/Frozen12/TelegramShellBot-Rclone"
 try:
     if len(UPSTREAM_BRANCH) == 0:
        raise TypeError
 except:
-    UPSTREAM_BRANCH = 'gshell'
+    UPSTREAM_BRANCH = 'main'
 
 if ospath.exists('.git'):
     srun(["rm", "-rf", ".git"])
