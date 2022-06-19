@@ -21,6 +21,4 @@ COPY . .
 
 RUN pip3 install -r requirements.txt
 
-EXPOSE $PORT
-
 CMD [ "bash", "start.sh" ]
