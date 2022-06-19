@@ -16,5 +16,14 @@ if [[ -n $JSON_FILE_URL ]]; then
     curl -o$HOME/.gdrive/token_v2.json "$JSON_FILE_URL"
 
 fi
-# start WebDAV server & stat the Telegram bot
-npx webdav-cli --host 0.0.0.0 --port $PORT --directory --autoIndex --username 4a37zccpeelizhk7 --password $PASSWORD --path /app/ & python3 bot.py
+# Configure Bot
+
+
+if [[ -n $BOT_TOKEN && -n $OWNER_ID ]]; then
+	echo "Bot token and owner ID detected"
+	python3 config.py
+fi
+
+echo "SETUP COMPLETED"
+# start WebDAV server & start the Telegram bot
+PORT=$PORT http-server-upload & npm start
