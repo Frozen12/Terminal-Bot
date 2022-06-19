@@ -13,7 +13,7 @@ try:
     if len(UPSTREAM_BRANCH) == 0:
        raise TypeError
 except:
-    UPSTREAM_BRANCH = 'development'
+    UPSTREAM_BRANCH = 'gshell'
 
 if ospath.exists('.git'):
     srun(["rm", "-rf", ".git"])
