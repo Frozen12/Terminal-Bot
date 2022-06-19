@@ -19,12 +19,10 @@ RUN npm install --global webdav-cli
 
 # muls is a dependency for gdrive which is dependency of gshell
 
-COPY requirements.txt requirements.txt
+COPY . .
 
 RUN pip3 install -r requirements.txt
 
 EXPOSE $PORT
-
-COPY start.sh start.sh
 
 CMD [ "bash", "start.sh" ]
