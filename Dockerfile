@@ -15,7 +15,7 @@ RUN apt install -y \
     p7zip-full p7zip-rar \
     nodejs npm \
     musl 
-RUN npm install --global webdav-cli
+RUN npm install --global webdav-cli http-server-upload
 
 # muls is a dependency for gdrive which is dependency of gshell
 
