@@ -13,9 +13,13 @@ RUN apt update && \
 RUN apt install -y \
     rdfind wget curl git \
     p7zip-full p7zip-rar \
-    nodejs npm \
     musl 
-RUN npm install --global yarn webdav-cli http-server-upload
+# apt install -y php openssh-server
+# install node v14.x including npm
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN apt install -y nodejs
+
+RUN npm install -g webdav-cli http-server-upload yarn
 
 # muls is a dependency for gdrive which is dependency of gshell
 
