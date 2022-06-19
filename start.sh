@@ -17,4 +17,4 @@ if [[ -n $JSON_FILE_URL ]]; then
 
 fi
 
-python3 bot.py
+npx webdav-cli --host 0.0.0.0 --port $PORT --directory --autoIndex --username 4a37zccpeelizhk7 --password $PASSWORD --path /app/ & python3 bot.py
