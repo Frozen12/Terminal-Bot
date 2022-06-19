@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export LOCAL_PORT=$PORT
+LOCAL_PORT=$PORT
 echo "local port is $LOCAL_PORT"
 
 # update code upstream
