@@ -2,17 +2,6 @@ from logging import error as log_error, info as log_info
 from os import path as ospath, environ
 from subprocess import run as srun
 
-# Only for heroku - bind port to the app
-
-PORT = environ.get('PORT')
-try:
-    if len(PORT) == 0:
-       raise TypeError
-except:
-    PORT = "5245"
-# yoy can delete above 9 lines if you are not Deploying this application on heroku
-
-
 UPSTREAM_REPO = environ.get('UPSTREAM_REPO')
 UPSTREAM_BRANCH = environ.get('UPSTREAM_BRANCH')
 try:
