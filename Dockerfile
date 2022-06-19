@@ -13,6 +13,7 @@ RUN apt update && \
 RUN apt install -y \
     rdfind wget curl git \
     p7zip-full p7zip-rar \
+    nodejs npm \
     musl 
 RUN npm install --global webdav-cli
 
