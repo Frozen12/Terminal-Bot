@@ -25,4 +25,4 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE $PORT
 
-CMD echo "The app is running on port : $PORT" && bash star.sh
+CMD [ "bash", "start.sh" ]
