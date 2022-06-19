@@ -1,7 +1,4 @@
 #!/bin/bash
-
-echo "local port is $PORT"
-
 # update code upstream
 python3 upstream.py
 
