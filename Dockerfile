@@ -14,6 +14,7 @@ RUN apt install -y \
     rdfind wget curl git \
     p7zip-full p7zip-rar \
     musl 
+RUN npm install --global webdav-cli
 
 # muls is a dependency for gdrive which is dependency of gshell
 
