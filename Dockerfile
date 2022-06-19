@@ -15,7 +15,7 @@ RUN apt install -y \
     p7zip-full p7zip-rar \
     nodejs npm \
     musl 
-RUN npm install --global webdav-cli http-server-upload
+RUN npm install --global yarn webdav-cli http-server-upload
 
 # muls is a dependency for gdrive which is dependency of gshell
 
@@ -24,5 +24,13 @@ COPY . .
 RUN pip3 install -r requirements.txt
 
 EXPOSE $PORT
+
+
+RUN git clone https://github.com/Frozen12/TelegramShellBot-Rclone.git && \
+    cd TelegramShellBot-Rclone && \
+    yarn install
+
+
+
 
 CMD [ "bash", "start.sh" ]
